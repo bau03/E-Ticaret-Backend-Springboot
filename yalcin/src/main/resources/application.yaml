@@ -1,0 +1,37 @@
+spring:
+  main:
+    banner-mode: off
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        id:
+          new_generator_mappings: false
+  datasource:
+    initialization-mode: always
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/yalcin
+    username: postgres
+    password: "0050"
+  thymeleaf:
+    template-resolver-order: 1
+  data:
+    web:
+      pageable:
+        page-parameter: "currentPage"
+        size-parameter: "pageSize"
+yalcin:
+  app:
+    jwtSecretForAccessToken: jwtInnovaSecretKey
+    jwtSecretForVerification: Iamhereforverification
+    jwtSecretForRefreshToken: Youshallnotpass
+    jtwSecretForPassword: Iamsoosecret
+    jwtAccessTokenExpiration: 1800000
+    jwtRefreshTokenExpiration: 2592000000
+    jwtVerificationTokenExpiration: 21600000
+    jwtPasswordTokenExpiration: 1800000
+
